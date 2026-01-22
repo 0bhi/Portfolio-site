@@ -38,7 +38,7 @@ export default function Projects() {
           </h2>
           <div className="w-20 h-0.5 bg-primary mx-auto mb-12"></div>
           <p className="text-center text-lg text-muted-foreground max-w-2xl mx-auto mb-16">
-            A selection of projects I've built. Each one taught me something new.
+            A selection of projects I&apos;ve built. Each one taught me something new.
           </p>
         </AnimatedSection>
 

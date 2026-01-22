@@ -14,8 +14,9 @@ const iconMap: Record<string, any> = {
   mail: Mail,
 };
 
+const titles = ["Fullstack Developer", "Software Engineer", "AI Engineer"];
+
 function TypingAnimation() {
-  const titles = ["Fullstack Developer", "Software Engineer", "AI Engineer"];
   const [currentTitleIndex, setCurrentTitleIndex] = useState(0);
   const [displayedText, setDisplayedText] = useState("");
   const [isDeleting, setIsDeleting] = useState(false);
@@ -120,7 +121,7 @@ export default function Hero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.1 }}
           >
-            Hi, I'm
+            Hi, I&apos;m
           </motion.p>
           <motion.h1
             className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold mb-6"
@@ -175,7 +176,7 @@ export default function Hero() {
               onClick={() => handleScroll("#contact")}
               className="px-8"
             >
-              Let's Talk
+              Let&apos;s Talk
             </Button>
           </motion.div>
         </motion.div>

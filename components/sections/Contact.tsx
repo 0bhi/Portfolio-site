@@ -142,11 +142,11 @@ export default function Contact() {
       <div className="container mx-auto max-w-6xl">
         <AnimatedSection>
           <h2 className="text-4xl sm:text-5xl font-bold mb-6 text-center">
-            Let's Connect
+            Let&apos;s Connect
           </h2>
           <div className="w-20 h-0.5 bg-primary mx-auto mb-12"></div>
           <p className="text-center text-lg text-muted-foreground max-w-2xl mx-auto mb-16">
-            Have a project in mind or just want to chat? I'd love to hear from you.
+            Have a project in mind or just want to chat? I&apos;d love to hear from you.
           </p>
         </AnimatedSection>
 
@@ -368,7 +368,7 @@ export default function Contact() {
                   >
                     <CheckCircle2 className="h-5 w-5 text-green-500" />
                     <p className="text-sm text-green-500">
-                      Thank you for your message! I'll get back to you soon.
+                      Thank you for your message! I&apos;ll get back to you soon.
                     </p>
                   </motion.div>
                 )}
