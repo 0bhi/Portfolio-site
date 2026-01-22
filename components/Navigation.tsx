@@ -5,7 +5,6 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
-import ThemeToggle from "@/components/ThemeToggle";
 
 const navItems = [
   { name: "Home", href: "#home" },
@@ -102,12 +101,10 @@ export default function Navigation() {
                 </Button>
               </motion.div>
             ))}
-            
           </div>
 
           {/* Mobile Menu Button */}
           <div className="md:hidden flex items-center gap-2">
-            
             <Button
               variant="ghost"
               size="icon"

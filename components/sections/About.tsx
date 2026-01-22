@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Image from "next/image";
 import { Download, MapPin, Award, ExternalLink } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
@@ -22,15 +23,18 @@ export default function About() {
           <AnimatedSection direction="left" delay={0.2}>
             <div className="relative">
               <motion.div
-                className="w-64 h-64 mx-auto rounded-full bg-gradient-to-br from-primary/20 to-primary/5 border-2 border-primary/20"
+                className="w-64 h-64 mx-auto rounded-full bg-gradient-to-br from-primary/20 to-primary/5 border-2 border-primary/20 relative overflow-hidden"
                 whileHover={{ scale: 1.02 }}
                 transition={{ duration: 0.2 }}
               >
                 {personalInfo.avatar ? (
-                  <img
+                  <Image
                     src={personalInfo.avatar}
                     alt={personalInfo.name}
-                    className="w-full h-full rounded-full object-cover"
+                    fill
+                    className="rounded-full object-cover"
+                    sizes="(max-width: 768px) 256px, 256px"
+                    priority
                   />
                 ) : (
                   <div className="w-full h-full rounded-full flex items-center justify-center text-6xl font-bold text-primary">

@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import emailjs from "@emailjs/browser";
 import { Mail, MapPin, Send, Github, Linkedin, Twitter, CheckCircle2, AlertCircle, Loader2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -68,18 +69,50 @@ export default function Contact() {
     setSubmitStatus("idle");
 
     try {
-      // Simulate form submission
-      await new Promise((resolve) => setTimeout(resolve, 1500));
+      // EmailJS configuration - Get these from https://www.emailjs.com/
+      // Add these to your .env.local file:
+      // NEXT_PUBLIC_EMAILJS_SERVICE_ID=your_service_id
+      // NEXT_PUBLIC_EMAILJS_TEMPLATE_ID=your_template_id
+      // NEXT_PUBLIC_EMAILJS_PUBLIC_KEY=your_public_key
       
-      setSubmitStatus("success");
-      setFormData({ name: "", email: "", message: "" });
-      setErrors({});
+      const serviceId = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID;
+      const templateId = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID;
+      const publicKey = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY;
+
+      if (serviceId && templateId && publicKey) {
+        // Initialize EmailJS
+        emailjs.init(publicKey);
+
+        // Send email
+        await emailjs.send(serviceId, templateId, {
+          from_name: formData.name,
+          from_email: formData.email,
+          message: formData.message,
+          to_email: personalInfo.email,
+        });
+
+        setSubmitStatus("success");
+        setFormData({ name: "", email: "", message: "" });
+        setErrors({});
+      } else {
+        // Fallback: If EmailJS is not configured, use mailto link
+        const subject = encodeURIComponent(`Contact from ${formData.name}`);
+        const body = encodeURIComponent(
+          `Name: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`
+        );
+        window.location.href = `mailto:${personalInfo.email}?subject=${subject}&body=${body}`;
+        
+        setSubmitStatus("success");
+        setFormData({ name: "", email: "", message: "" });
+        setErrors({});
+      }
       
       // Reset success message after 5 seconds
       setTimeout(() => {
         setSubmitStatus("idle");
       }, 5000);
     } catch (error) {
+      console.error("Error sending email:", error);
       setSubmitStatus("error");
     } finally {
       setIsSubmitting(false);
