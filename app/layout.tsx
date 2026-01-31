@@ -5,7 +5,7 @@ import DarkModeEnforcer from "@/components/DarkModeEnforcer";
 import { personalInfo } from "@/lib/data";
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://abhigyanpal.dev"), // Update with your actual domain
+  metadataBase: new URL("https://abhigyan-dev.vercel.app"),
   title: {
     default: "Abhigyan Pal - Full Stack Developer",
     template: "%s | Abhigyan Pal",
@@ -35,13 +35,13 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://abhigyanpal.dev", // Update with your actual domain
+    url: "https://abhigyan-dev.vercel.app",
     title: "Abhigyan Pal - Full Stack Developer",
     description: "Portfolio website showcasing full-stack development projects and skills. Specialized in building scalable web applications with real-time capabilities.",
     siteName: "Abhigyan Pal Portfolio",
     images: [
       {
-        url: "/og-image.png", // 1200x630px Open Graph image for social media previews
+        url: "https://abhigyan-dev.vercel.app/og-image.png", // 1200x630px Open Graph image for social media previews
         width: 1200,
         height: 630,
         alt: "Abhigyan Pal - Full Stack Developer",
@@ -53,7 +53,7 @@ export const metadata: Metadata = {
     title: "Abhigyan Pal - Full Stack Developer",
     description: "Portfolio website showcasing full-stack development projects and skills",
     creator: "@yourtwitter", // Update with your Twitter handle if available
-    images: ["/og-image.png"],
+    images: ["https://abhigyan-dev.vercel.app/og-image.png"],
   },
   robots: {
     index: true,
@@ -72,7 +72,7 @@ export const metadata: Metadata = {
     // yandex: "your-yandex-verification-code",
   },
   alternates: {
-    canonical: "https://abhigyanpal.dev", // Update with your actual domain
+    canonical: "https://abhigyan-dev.vercel.app",
   },
 };
 
