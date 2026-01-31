@@ -41,7 +41,7 @@ export const metadata: Metadata = {
     siteName: "Abhigyan Pal Portfolio",
     images: [
       {
-        url: "/avatar.jpg", // Add og-image.png to public folder for better results
+        url: "/og-image.png", // 1200x630px Open Graph image for social media previews
         width: 1200,
         height: 630,
         alt: "Abhigyan Pal - Full Stack Developer",
@@ -53,7 +53,7 @@ export const metadata: Metadata = {
     title: "Abhigyan Pal - Full Stack Developer",
     description: "Portfolio website showcasing full-stack development projects and skills",
     creator: "@yourtwitter", // Update with your Twitter handle if available
-    images: ["/avatar.jpg"],
+    images: ["/og-image.png"],
   },
   robots: {
     index: true,
